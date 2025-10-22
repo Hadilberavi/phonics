@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Organization X - Phonics Courses for Teenagers</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    >
+      tailwind.config = {
+                  theme: {
+                      extend: {
+                          colors: {
+                              primary: '#3b82f6',
+                              secondary: '#f1f5f9',
+                              accent: '#10b981',
+                          }
+                      }
+                  }
+              }
+    </script>
+  </head>
+
+  <body class="bg-white">
+    <nav
+      class="bg-white/90 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50 transition-all duration-300"
+      x-data="{ mobileOpen: false, scrolled: false }"
+      @scroll.window="scrolled = window.pageYOffset > 10"
+    >
+      <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-24">
+        <div class="flex justify-between items-center h-16">
+          <!-- Logo -->
+          <a
+            href="index.html"
+            class="inline-flex items-center gap-3 group no-underline"
+            aria-label="ABC TAP - Phonics"
+          >
+            <span
+              class="text-3xl font-extrabold tracking-tight bg-gradient-to-r from-blue-500 via-indigo-600 to-pink-500 bg-clip-text text-transparent"
+            >
+              ABC TAP
+            </span>
+          </a>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden lg:flex items-center space-x-1">
+            <a
+              href="index.html"
+              class="px-4 py-2.5 rounded-lg font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50/80 transition-all duration-200"
+              >Home</a
+            >
+            <a
+              href="courses.html"
+              class="px-4 py-2.5 rounded-lg font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50/80 transition-all duration-200"
+              >Phonics Courses</a
+            >
+            <a
+              href="workshops.html"
+              class="px-4 py-2.5 rounded-lg font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50/80 transition-all duration-200"
+              >Workshops</a
+            >
+            <a
+              href="Resources.html"
+              class="px-4 py-2.5 rounded-lg font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50/80 transition-all duration-200"
+              >Resources</a
+            >
+            <a
+              href="contact.html"
+              class="px-4 py-2.5 rounded-lg font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50/80 transition-all duration-200"
+              >Contact</a
+            >
+
+            <!-- Desktop CTA Button -->
+            <a
+              href="courses.html"
+              class="ml-2 inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-md hover:shadow-lg hover:from-blue-700 hover:to-purple-700 transform hover:-translate-y-0.5 transition-all duration-200"
+            >
+              <span>Get Started</span>
+              <svg
+                class="w-4 h-4"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5 12h14m-6-7l7 7-7 7"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Mobile menu button -->
+          <div class="lg:hidden">
+            <button
+              @click="mobileOpen = !mobileOpen"
+              class="p-2 rounded-lg text-gray-700 hover:text-blue-600 hover:bg-gray-100 transition-colors"
+              :class="{ 'text-blue-600': mobileOpen }"
+            >
+              <svg
+                x-show="!mobileOpen"
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+              <svg
+                x-show="mobileOpen"
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                style="display: none"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div
+        x-show="mobileOpen"
+        x-collapse
+        class="lg:hidden bg-white border-t border-gray-100 shadow-lg"
+      >
+        <div class="px-2 pt-2 pb-4 space-y-1">
+          <a
+            href="index.html"
+            class="block px-4 py-3 rounded-lg font-medium text-blue-600 bg-blue-50 transition-colors"
+            >Home</a
+          >
+          <a
+            href="courses.html"
+            class="block px-4 py-3 rounded-lg font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors"
+            >Phonics Courses</a
+          >
+          <a
+            href="workshops.html"
+            class="block px-4 py-3 rounded-lg font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors"
+            >Workshops</a
+          >
+          <a
+            href="Resources.html"
+            class="block px-4 py-3 rounded-lg font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors"
+            >Resources</a
+          >
+          <a
+            href="contact.html"
+            class="block px-4 py-3 rounded-lg font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors"
+            >Contact</a
+          >
+
+          <!-- Mobile CTA Button -->
+          <div class="pt-2 px-2">
+            <a
+              href="courses.html"
+              class="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-full font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-md hover:shadow-lg transition-all"
+            >
+              <span>Get Started</span>
+              <svg
+                class="w-4 h-4"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5 12h14m-6-7l7 7-7 7"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Header Section -->
+    <div
+      class="border-b border-gray-200 bg-gradient-to-r from-blue-50 to-purple-50"
+    >
+      <div class="max-w-7xl mx-auto px-6 py-16">
+        <div class="text-center space-y-4">
+          <h1 class="text-5xl font-bold text-gray-900">Learning Resources</h1>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Comprehensive collection of phonics materials, interactive tools,
+            and educational content designed to support English language
+            learning at every level.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Resources Grid -->
+    <div class="max-w-7xl mx-auto px-6 py-16">
+      <div class="space-y-16">
+        <!-- Videos Section -->
+        <section class="space-y-8">
+          <div class="flex items-center gap-4">
+            <span class="text-4xl">🎥</span>
+            <div>
+              <h2 class="text-3xl font-bold text-gray-900">Videos</h2>
+              <div class="h-1 w-16 bg-blue-500 rounded-full mt-2"></div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Card 1 -->
+            <div
+              class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-xl transform hover:-translate-y-2 transition-all duration-500 group overflow-hidden"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <!-- Thumbnail -->
+              <div class="relative overflow-hidden">
+                <img
+                  src="https://img.freepik.com/free-vector/hand-drawn-vowels-illustration_23-2150081423.jpg?semt=ais_incoming&w=740&q=80"
+                  alt="Phonics Fundamentals"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div class="p-6 space-y-3">
+                <div class="flex items-start justify-between">
+                  <h3
+                    class="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors"
+                  >
+                    Phonics Fundamentals
+                  </h3>
+                  <span
+                    class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full"
+                    >Beginner</span
+                  >
+                </div>
+                <p class="text-gray-600 leading-relaxed">
+                  Learn the basics of English phonics with interactive video
+                  lessons
+                </p>
+              </div>
+              <div class="px-6 pb-6 space-y-4">
+                <div class="flex flex-wrap gap-2 text-sm text-gray-500">
+                  <span class="flex items-center gap-1">
+                    <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                    Video Series
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <span class="w-2 h-2 bg-blue-500 rounded-full"></span> 45
+                    min
+                  </span>
+                </div>
+                <div class="flex gap-2">
+                  <button
+                    class="flex-1 px-4 py-2 rounded-md text-sm bg-blue-500 text-white hover:bg-blue-400 transition"
+                  >
+                    Access Resource
+                  </button>
+                  <button
+                    class="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-md text-sm hover:bg-gray-50 transition-colors"
+                  >
+                    Preview
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div
+              class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-xl transform hover:-translate-y-2 transition-all duration-500 group overflow-hidden"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="relative overflow-hidden">
+                <img
+                  src="https://img.freepik.com/free-vector/hand-drawn-vowels-illustration_23-2150142543.jpg?semt=ais_hybrid&w=740&q=80"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div class="p-6 space-y-3">
+                <div class="flex items-start justify-between">
+                  <h3
+                    class="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors"
+                  >
+                    Letter Sound Adventures
+                  </h3>
+                  <span
+                    class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full"
+                    >Elementary</span
+                  >
+                </div>
+                <p class="text-gray-600 leading-relaxed">
+                  Fun animated videos teaching letter sounds through stories
+                </p>
+              </div>
+              <div class="px-6 pb-6 space-y-4">
+                <div class="flex flex-wrap gap-2 text-sm text-gray-500">
+                  <span class="flex items-center gap-1">
+                    <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                    Animation
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <span class="w-2 h-2 bg-blue-500 rounded-full"></span> 30
+                    min
+                  </span>
+                </div>
+                <div class="flex gap-2">
+                  <button
+                    class="flex-1 px-4 py-2 rounded-md text-sm bg-orange-500 text-white hover:bg-orange-400 transition"
+                  >
+                    Access Resource
+                  </button>
+                  <button
+                    class="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-md text-sm hover:bg-gray-50 transition-colors"
+                  >
+                    Preview
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div
+              class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-xl transform hover:-translate-y-2 transition-all duration-500 group overflow-hidden"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div class="relative overflow-hidden">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQExY-GMTELMMgo2ULeWwFWFKqEfqzTjxe2gg&s"
+                  alt="Advanced Pronunciation"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div class="p-6 space-y-3">
+                <div class="flex items-start justify-between">
+                  <h3
+                    class="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors"
+                  >
+                    Advanced Pronunciation
+                  </h3>
+                  <span
+                    class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full"
+                    >Advanced</span
+                  >
+                </div>
+                <p class="text-gray-600 leading-relaxed">
+                  Master difficult English sounds with expert guidance
+                </p>
+              </div>
+              <div class="px-6 pb-6 space-y-4">
+                <div class="flex flex-wrap gap-2 text-sm text-gray-500">
+                  <span class="flex items-center gap-1">
+                    <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                    Tutorial
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <span class="w-2 h-2 bg-blue-500 rounded-full"></span> 60
+                    min
+                  </span>
+                </div>
+                <div class="flex gap-2">
+                  <button
+                    class="flex-1 bg-purple-600 px-4 py-2 rounded-md text-smbg-purple-500 text-white hover:bg-purple-400 transition"
+                  >
+                    Access Resource
+                  </button>
+                  <button
+                    class="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-md text-sm hover:bg-gray-50 transition-colors"
+                  >
+                    Preview
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Worksheets Section -->
+        <section class="space-y-8">
+          <div class="flex items-center gap-4">
+            <span class="text-4xl">📝</span>
+            <div>
+              <h2 class="text-3xl font-bold text-gray-900">Worksheets</h2>
+              <div class="h-1 w-16 bg-blue-500 rounded-full mt-2"></div>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- cart1 -->
+            <div
+              class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 group"
+            >
+              <!-- Thumbnail -->
+              <div class="relative overflow-hidden">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQP634bT3uO4e8m3JFTRNmza2Nh8dOgEsCXA&s"
+                  alt="Phonics Fundamentals"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div class="p-6 space-y-3">
+                <div class="flex items-start justify-between">
+                  <h3
+                    class="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors"
+                  >
+                    Letter Recognition Practice
+                  </h3>
+                  <span
+                    class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full"
+                    >Beginner</span
+                  >
+                </div>
+                <p class="text-gray-600 leading-relaxed">
+                  Printable worksheets for identifying and writing letters
+                </p>
+              </div>
+              <div class="px-6 pb-6 space-y-4">
+                <div class="flex flex-wrap gap-2 text-sm text-gray-500">
+                  <span class="flex items-center gap-1">
+                    <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                    PDF Download
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+                    12 pages
+                  </span>
+                </div>
+                <div class="flex gap-2">
+                  <button
+                    class="flex-1 bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700 transition-colors"
+                  >
+                    Access Resource
+                  </button>
+                  <button
+                    class="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-md text-sm hover:bg-gray-50 transition-colors"
+                  >
+                    Preview
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- cart2 -->
+            <div
+              class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 group"
+            >
+              <!-- Thumbnail -->
+              <div class="relative overflow-hidden">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQASoxmYWn_X4hSuOlRCN7zBfqITn0S8iwDqg&s"
+                  alt="Phonics Fundamentals"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div class="p-6 space-y-3">
+                <div class="flex items-start justify-between">
+                  <h3
+                    class="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors"
+                  >
+                    Phonics Blending Exercises
+                  </h3>
+                  <span
+                    class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full"
+                    >Intermediate</span
+                  >
+                </div>
+                <p class="text-gray-600 leading-relaxed">
+                  Practice combining sounds to form words
+                </p>
+              </div>
+              <div class="px-6 pb-6 space-y-4">
+                <div class="flex flex-wrap gap-2 text-sm text-gray-500">
+                  <span class="flex items-center gap-1">
+                    <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                    Interactive PDF
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+                    8 pages
+                  </span>
+                </div>
+                <div class="flex gap-2">
+                  <button
+                    class="flex-1 px-4 py-2 rounded-md text-sm bg-orange-500 text-white hover:bg-orange-400 transition"
+                  >
+                    Access Resource
+                  </button>
+                  <button
+                    class="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-md text-sm hover:bg-gray-50 transition-colors"
+                  >
+                    Preview
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 group"
+            >
+              <!-- Thumbnail -->
+              <div class="relative overflow-hidden">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRVhqy3q05O3zDWkYLog21poBfz7EhfARoEA&s"
+                  alt="Phonics Fundamentals"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div class="p-6 space-y-3">
+                <div class="flex items-start justify-between">
+                  <h3
+                    class="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors"
+                  >
+                    Spelling Pattern Workbook
+                  </h3>
+                  <span
+                    class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full"
+                    >Advanced</span
+                  >
+                </div>
+                <p class="text-gray-600 leading-relaxed">
+                  Comprehensive exercises for common spelling patterns
+                </p>
+              </div>
+              <div class="px-6 pb-6 space-y-4">
+                <div class="flex flex-wrap gap-2 text-sm text-gray-500">
+                  <span class="flex items-center gap-1">
+                    <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                    Workbook
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+                    24 pages
+                  </span>
+                </div>
+                <div class="flex gap-2">
+                  <button
+                    class="flex-1 px-4 py-2 rounded-md text-sm bg-purple-500 text-white hover:bg-purple-400 transition"
+                  >
+                    Access Resource
+                  </button>
+                  <button
+                    class="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-md text-sm hover:bg-gray-50 transition-colors"
+                  >
+                    Preview
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Reading Books Section -->
+        <section class="space-y-8">
+          <div class="flex items-center gap-4">
+            <span class="text-4xl">📚</span>
+            <div>
+              <h2 class="text-3xl font-bold text-gray-900">Reading Books</h2>
+              <div class="h-1 w-16 bg-blue-500 rounded-full mt-2"></div>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div
+              class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 group"
+            >
+              <!-- Thumbnail -->
+              <div class="relative overflow-hidden">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNDqCehh7CBveiXvHbKrCa6AFG_c5pELNukg&s"
+                  alt="Phonics Fundamentals"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div class="p-6 space-y-3">
+                <div class="flex items-start justify-between">
+                  <h3
+                    class="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors"
+                  >
+                    First Phonics Readers
+                  </h3>
+                  <span
+                    class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full"
+                    >Beginner</span
+                  >
+                </div>
+                <p class="text-gray-600 leading-relaxed">
+                  Simple stories designed for beginning readers
+                </p>
+              </div>
+              <div class="px-6 pb-6 space-y-4">
+                <div class="flex flex-wrap gap-2 text-sm text-gray-500">
+                  <span class="flex items-center gap-1">
+                    <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                    Digital Book
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+                    16 pages
+                  </span>
+                </div>
+                <div class="flex gap-2">
+                  <button
+                    class="flex-1 px-4 py-2 rounded-md text-sm bg-red-500 text-white hover:bg-red-400 transition"
+                  >
+                    Access Resource
+                  </button>
+                  <button
+                    class="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-md text-sm hover:bg-gray-50 transition-colors"
+                  >
+                    Preview
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 group"
+            >
+              <!-- Thumbnail -->
+              <div class="relative overflow-hidden">
+                <img
+                  src="https://img.freepik.com/free-vector/hand-drawn-vowels-illustration_23-2150081423.jpg?semt=ais_incoming&w=740&q=80"
+                  alt="Phonics Fundamentals"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div class="p-6 space-y-3">
+                <div class="flex items-start justify-between">
+                  <h3
+                    class="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors"
+                  >
+                    Decodable Story Collection
+                  </h3>
+                  <span
+                    class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full"
+                    >Intermediate</span
+                  >
+                </div>
+                <p class="text-gray-600 leading-relaxed">
+                  Engaging stories that reinforce phonics skills
+                </p>
+              </div>
+              <div class="px-6 pb-6 space-y-4">
+                <div class="flex flex-wrap gap-2 text-sm text-gray-500">
+                  <span class="flex items-center gap-1">
+                    <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                    Book Series
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+                    32 pages
+                  </span>
+                </div>
+                <div class="flex gap-2">
+                  <button
+                    class="flex-1 bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700 transition-colors"
+                  >
+                    Access Resource
+                  </button>
+                  <button
+                    class="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-md text-sm hover:bg-gray-50 transition-colors"
+                  >
+                    Preview
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 group"
+            >
+              <!-- Thumbnail -->
+              <div class="relative overflow-hidden">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbJLxWd6nSyLoGTocXJiTaDH-TZIpihNZ-oA&s"
+                  alt="Phonics Fundamentals"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div class="p-6 space-y-3">
+                <div class="flex items-start justify-between">
+                  <h3
+                    class="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors"
+                  >
+                    Advanced Reading Adventures
+                  </h3>
+                  <span
+                    class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full"
+                    >Advanced</span
+                  >
+                </div>
+                <p class="text-gray-600 leading-relaxed">
+                  Complex narratives for fluent readers
+                </p>
+              </div>
+              <div class="px-6 pb-6 space-y-4">
+                <div class="flex flex-wrap gap-2 text-sm text-gray-500">
+                  <span class="flex items-center gap-1">
+                    <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                    Chapter Book
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+                    48 pages
+                  </span>
+                </div>
+                <div class="flex gap-2">
+                  <button
+                    class="flex-1 px-4 py-2 rounded-md text-sm bg-pink-500 text-white hover:bg-pink-400 transition"
+                  >
+                    Access Resource
+                  </button>
+                  <button
+                    class="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-md text-sm hover:bg-gray-50 transition-colors"
+                  >
+                    Preview
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Letter Sounds Section -->
+        <section class="space-y-8">
+          <div class="flex items-center gap-4">
+            <span class="text-4xl">🔤</span>
+            <div>
+              <h2 class="text-3xl font-bold text-gray-900">Letter Sounds</h2>
+              <div class="h-1 w-16 bg-blue-500 rounded-full mt-2"></div>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div
+              class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 group"
+            >
+              <!-- Thumbnail -->
+              <div class="relative overflow-hidden">
+                <img
+                  src="https://img.freepik.com/free-vector/hand-drawn-vowels-illustration_23-2150081423.jpg?semt=ais_incoming&w=740&q=80"
+                  alt="Phonics Fundamentals"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div class="p-6 space-y-3">
+                <div class="flex items-start justify-between">
+                  <h3
+                    class="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors"
+                  >
+                    Alphabet Sound Library
+                  </h3>
+                  <span
+                    class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full"
+                    >All Levels</span
+                  >
+                </div>
+                <p class="text-gray-600 leading-relaxed">
+                  Complete collection of letter sounds with audio
+                </p>
+              </div>
+              <div class="px-6 pb-6 space-y-4">
+                <div class="flex flex-wrap gap-2 text-sm text-gray-500">
+                  <span class="flex items-center gap-1">
+                    <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                    Audio Collection
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+                    26 sounds
+                  </span>
+                </div>
+                <div class="flex gap-2">
+                  <button
+                    class="flex-1 px-4 py-2 rounded-md text-sm bg-yellow-500 text-white hover:bg-yellow-400 transition"
+                  >
+                    Access Resource
+                  </button>
+                  <button
+                    class="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-md text-sm hover:bg-gray-50 transition-colors"
+                  >
+                    Preview
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 group"
+            >
+              <!-- Thumbnail -->
+              <div class="relative overflow-hidden">
+                <img
+                  src="https://img.freepik.com/free-vector/hand-drawn-vowels-illustration_23-2150081423.jpg?semt=ais_incoming&w=740&q=80"
+                  alt="Phonics Fundamentals"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div class="p-6 space-y-3">
+                <div class="flex items-start justify-between">
+                  <h3
+                    class="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors"
+                  >
+                    Phoneme Practice Cards
+                  </h3>
+                  <span
+                    class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full"
+                    >Intermediate</span
+                  >
+                </div>
+                <p class="text-gray-600 leading-relaxed">
+                  Visual and audio cards for phoneme recognition
+                </p>
+              </div>
+              <div class="px-6 pb-6 space-y-4">
+                <div class="flex flex-wrap gap-2 text-sm text-gray-500">
+                  <span class="flex items-center gap-1">
+                    <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                    Digital Cards
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+                    44 phonemes
+                  </span>
+                </div>
+                <div class="flex gap-2">
+                  <button
+                    class="flex-1 px-4 py-2 rounded-md text-sm bg-green-500 text-white hover:bg-green-400 transition"
+                  >
+                    Access Resource
+                  </button>
+                  <button
+                    class="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-md text-sm hover:bg-gray-50 transition-colors"
+                  >
+                    Preview
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 group"
+            >
+              <!-- Thumbnail -->
+              <div class="relative overflow-hidden">
+                <img
+                  src="https://img.freepik.com/free-vector/hand-drawn-vowels-illustration_23-2150081423.jpg?semt=ais_incoming&w=740&q=80"
+                  alt="Phonics Fundamentals"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div class="p-6 space-y-3">
+                <div class="flex items-start justify-between">
+                  <h3
+                    class="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors"
+                  >
+                    Sound Discrimination Games
+                  </h3>
+                  <span
+                    class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full"
+                    >Advanced</span
+                  >
+                </div>
+                <p class="text-gray-600 leading-relaxed">
+                  Interactive activities to distinguish similar sounds
+                </p>
+              </div>
+              <div class="px-6 pb-6 space-y-4">
+                <div class="flex flex-wrap gap-2 text-sm text-gray-500">
+                  <span class="flex items-center gap-1">
+                    <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                    Game Collection
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+                    15 games
+                  </span>
+                </div>
+                <div class="flex gap-2">
+                  <button
+                    class="flex-1 px-4 py-2 rounded-md text-sm bg-blue-500 text-white hover:bg-blue-400 transition"
+                  >
+                    Access Resource
+                  </button>
+                  <button
+                    class="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-md text-sm hover:bg-gray-50 transition-colors"
+                  >
+                    Preview
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Games Section -->
+        <!-- <section class="space-y-8">
+          <div class="flex items-center gap-4">
+            <span class="text-4xl">🎮</span>
+            <div>
+              <h2 class="text-3xl font-bold text-gray-900">Games</h2>
+              <div class="h-1 w-16 bg-blue-500 rounded-full mt-2"></div>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div
+              class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 group"
+            >
+              <div class="p-6 space-y-3">
+                <div class="flex items-start justify-between">
+                  <h3
+                    class="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors"
+                  >
+                    Phonics Memory Match
+                  </h3>
+                  <span
+                    class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full"
+                    >Beginner</span
+                  >
+                </div>
+                <p class="text-gray-600 leading-relaxed">
+                  Match letters with their corresponding sounds
+                </p>
+              </div>
+              <div class="px-6 pb-6 space-y-4">
+                <div class="flex flex-wrap gap-2 text-sm text-gray-500">
+                  <span class="flex items-center gap-1">
+                    <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                    Memory Game
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+                    1-4 players
+                  </span>
+                </div>
+                <div class="flex gap-2">
+                  <button
+                    class="flex-1 bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700 transition-colors"
+                  >
+                    Access Resource
+                  </button>
+                  <button
+                    class="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-md text-sm hover:bg-gray-50 transition-colors"
+                  >
+                    Preview
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 group"
+            >
+              <div class="p-6 space-y-3">
+                <div class="flex items-start justify-between">
+                  <h3
+                    class="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors"
+                  >
+                    Word Building Challenge
+                  </h3>
+                  <span
+                    class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full"
+                    >Intermediate</span
+                  >
+                </div>
+                <p class="text-gray-600 leading-relaxed">
+                  Create words using phonetic building blocks
+                </p>
+              </div>
+              <div class="px-6 pb-6 space-y-4">
+                <div class="flex flex-wrap gap-2 text-sm text-gray-500">
+                  <span class="flex items-center gap-1">
+                    <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                    Puzzle Game
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+                    1-2 players
+                  </span>
+                </div>
+                <div class="flex gap-2">
+                  <button
+                    class="flex-1 bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700 transition-colors"
+                  >
+                    Access Resource
+                  </button>
+                  <button
+                    class="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-md text-sm hover:bg-gray-50 transition-colors"
+                  >
+                    Preview
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 group"
+            >
+              <div class="p-6 space-y-3">
+                <div class="flex items-start justify-between">
+                  <h3
+                    class="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors"
+                  >
+                    Spelling Bee Simulator
+                  </h3>
+                  <span
+                    class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full"
+                    >Advanced</span
+                  >
+                </div>
+                <p class="text-gray-600 leading-relaxed">
+                  Practice spelling with increasing difficulty levels
+                </p>
+              </div>
+              <div class="px-6 pb-6 space-y-4">
+                <div class="flex flex-wrap gap-2 text-sm text-gray-500">
+                  <span class="flex items-center gap-1">
+                    <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                    Quiz Game
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+                    1 player
+                  </span>
+                </div>
+                <div class="flex gap-2">
+                  <button
+                    class="flex-1 bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700 transition-colors"
+                  >
+                    Access Resource
+                  </button>
+                  <button
+                    class="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-md text-sm hover:bg-gray-50 transition-colors"
+                  >
+                    Preview
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section> -->
+
+        <!-- Sight Words Section -->
+        <section class="space-y-8">
+          <div class="flex items-center gap-4">
+            <span class="text-4xl">👁️</span>
+            <div>
+              <h2 class="text-3xl font-bold text-gray-900">Sight Words</h2>
+              <div class="h-1 w-16 bg-blue-500 rounded-full mt-2"></div>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div
+              class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 group"
+            >
+              <!-- Thumbnail -->
+              <div class="relative overflow-hidden">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO0I0koTAW-Q526Nx6OCqaFs7o1Lu1XmyrRA&s"
+                  alt="Phonics Fundamentals"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div class="p-6 space-y-3">
+                <div class="flex items-start justify-between">
+                  <h3
+                    class="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors"
+                  >
+                    Essential Sight Words
+                  </h3>
+                  <span
+                    class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full"
+                    >Beginner</span
+                  >
+                </div>
+                <p class="text-gray-600 leading-relaxed">
+                  100 most common sight words with practice activities
+                </p>
+              </div>
+              <div class="px-6 pb-6 space-y-4">
+                <div class="flex flex-wrap gap-2 text-sm text-gray-500">
+                  <span class="flex items-center gap-1">
+                    <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                    Word List
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+                    100 words
+                  </span>
+                </div>
+                <div class="flex gap-2">
+                  <button
+                    class="flex-1 px-4 py-2 rounded-md text-sm bg-pink-500 text-white hover:bg-pink-400 transition"
+                  >
+                    Access Resource
+                  </button>
+                  <button
+                    class="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-md text-sm hover:bg-gray-50 transition-colors"
+                  >
+                    Preview
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 group"
+            >
+              <!-- Thumbnail -->
+              <div class="relative overflow-hidden">
+                <img
+                  src="https://img.freepik.com/free-vector/hand-drawn-vowels-illustration_23-2150081423.jpg?semt=ais_incoming&w=740&q=80"
+                  alt="Phonics Fundamentals"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div class="p-6 space-y-3">
+                <div class="flex items-start justify-between">
+                  <h3
+                    class="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors"
+                  >
+                    Sight Word Flashcards
+                  </h3>
+                  <span
+                    class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full"
+                    >Intermediate</span
+                  >
+                </div>
+                <p class="text-gray-600 leading-relaxed">
+                  Interactive digital flashcards for memorization
+                </p>
+              </div>
+              <div class="px-6 pb-6 space-y-4">
+                <div class="flex flex-wrap gap-2 text-sm text-gray-500">
+                  <span class="flex items-center gap-1">
+                    <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                    Digital Cards
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+                    220 words
+                  </span>
+                </div>
+                <div class="flex gap-2">
+                  <button
+                    class="flex-1 px-4 py-2 rounded-md text-sm bg-purple-500 text-white hover:bg-purple-400 transition"
+                  >
+                    Access Resource
+                  </button>
+                  <button
+                    class="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-md text-sm hover:bg-gray-50 transition-colors"
+                  >
+                    Preview
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 group"
+            >
+              <!-- Thumbnail -->
+              <div class="relative overflow-hidden">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNnz6OkMFkBbWLt2zM6-oMxjsCQ1AEEmePKA&s"
+                  alt="Phonics Fundamentals"
+                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div class="p-6 space-y-3">
+                <div class="flex items-start justify-between">
+                  <h3
+                    class="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors"
+                  >
+                    Advanced Vocabulary Builder
+                  </h3>
+                  <span
+                    class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full"
+                    >Advanced</span
+                  >
+                </div>
+                <p class="text-gray-600 leading-relaxed">
+                  Complex sight words for fluent readers
+                </p>
+              </div>
+              <div class="px-6 pb-6 space-y-4">
+                <div class="flex flex-wrap gap-2 text-sm text-gray-500">
+                  <span class="flex items-center gap-1">
+                    <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                    Study Guide
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+                    500 words
+                  </span>
+                </div>
+                <div class="flex gap-2">
+                  <button
+                    class="flex-1 px-4 py-2 rounded-md text-sm bg-green-500 text-white hover:bg-green-400 transition"
+                  >
+                    Access Resource
+                  </button>
+                  <button
+                    class="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-md text-sm hover:bg-gray-50 transition-colors"
+                  >
+                    Preview
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Call to Action -->
+      <div
+        class="mt-20 text-center space-y-6 py-16 border-t border-gray-200 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg"
+      >
+        <h3 class="text-2xl font-bold text-gray-900">
+          Ready to Start Learning?
+        </h3>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Join thousands of learners who have improved their English phonics
+          skills with our comprehensive resources.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <button
+            class="bg-blue-600 text-white px-8 py-3 rounded-md font-medium hover:bg-blue-700 transition-colors min-w-40"
+          >
+            Join Workshops
+          </button>
+          <button
+            class="bg-white border border-gray-300 text-gray-700 px-8 py-3 rounded-md font-medium hover:bg-gray-50 transition-colors min-w-40"
+          >
+            Download Free Resources
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div>
+            <h5 class="text-lg font-semibold mb-4">Organization X</h5>
+            <p class="text-gray-300">
+              Empowering teenagers with essential phonics skills for academic
+              and personal success.
+            </p>
+          </div>
+
+          <div>
+            <h5 class="text-lg font-semibold mb-4">Quick Links</h5>
+            <ul class="space-y-2 text-gray-300">
+              <li><a href="index.html" class="hover:text-white">Home</a></li>
+              <li>
+                <a href="courses.html" class="hover:text-white"
+                  >Phonics Courses</a
+                >
+              </li>
+              <li>
+                <a href="workshops.html" class="hover:text-white">Workshops</a>
+              </li>
+              <li>
+                <a href="contact.html" class="hover:text-white">Contact</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h5 class="text-lg font-semibold mb-4">Contact Info</h5>
+            <ul class="space-y-2 text-gray-300">
+              <li>📧 info@organizationx.com</li>
+              <li>📞 (555) 123-4567</li>
+              <li>📍 123 Education Street<br />Learning City, LC 12345</li>
+            </ul>
+          </div>
+
+          <div>
+            <h5 class="text-lg font-semibold mb-4">Follow Us</h5>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-300 hover:text-white">Facebook</a>
+              <a href="#" class="text-gray-300 hover:text-white">Twitter</a>
+              <a href="#" class="text-gray-300 hover:text-white">Instagram</a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300"
+        >
+          <p>&copy; 2024 Organization X. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

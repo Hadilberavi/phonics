@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phonics Courses - Organization X</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+  </head>
+
+  <body class="bg-gray-50">
+    <nav
+      class="bg-white/90 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50 transition-all duration-300"
+      x-data="{ mobileOpen: false, scrolled: false }"
+      @scroll.window="scrolled = window.pageYOffset > 10"
+    >
+      <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-24">
+        <div class="flex justify-between items-center h-16">
+          <!-- Logo -->
+          <a
+            href="index.html"
+            class="inline-flex items-center gap-3 group no-underline"
+            aria-label="ABC TAP - Phonics"
+          >
+            <span
+              class="text-3xl font-extrabold tracking-tight bg-gradient-to-r from-blue-500 via-indigo-600 to-pink-500 bg-clip-text text-transparent"
+            >
+              ABC TAP
+            </span>
+          </a>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden lg:flex items-center space-x-1">
+            <a
+              href="index.html"
+              class="px-4 py-2.5 rounded-lg font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50/80 transition-all duration-200"
+              >Home</a
+            >
+            <a
+              href="courses.html"
+              class="px-4 py-2.5 rounded-lg font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50/80 transition-all duration-200"
+              >Phonics Courses</a
+            >
+            <a
+              href="workshops.html"
+              class="px-4 py-2.5 rounded-lg font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50/80 transition-all duration-200"
+              >Workshops</a
+            >
+            <a
+              href="Resources.html"
+              class="px-4 py-2.5 rounded-lg font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50/80 transition-all duration-200"
+              >Resources</a
+            >
+            <a
+              href="contact.html"
+              class="px-4 py-2.5 rounded-lg font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50/80 transition-all duration-200"
+              >Contact</a
+            >
+
+            <!-- Desktop CTA Button -->
+            <a
+              href="courses.html"
+              class="ml-2 inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-md hover:shadow-lg hover:from-blue-700 hover:to-purple-700 transform hover:-translate-y-0.5 transition-all duration-200"
+            >
+              <span>Get Started</span>
+              <svg
+                class="w-4 h-4"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5 12h14m-6-7l7 7-7 7"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Mobile menu button -->
+          <div class="lg:hidden">
+            <button
+              @click="mobileOpen = !mobileOpen"
+              class="p-2 rounded-lg text-gray-700 hover:text-blue-600 hover:bg-gray-100 transition-colors"
+              :class="{ 'text-blue-600': mobileOpen }"
+            >
+              <svg
+                x-show="!mobileOpen"
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+              <svg
+                x-show="mobileOpen"
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                style="display: none"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div
+        x-show="mobileOpen"
+        x-collapse
+        class="lg:hidden bg-white border-t border-gray-100 shadow-lg"
+      >
+        <div class="px-2 pt-2 pb-4 space-y-1">
+          <a
+            href="index.html"
+            class="block px-4 py-3 rounded-lg font-medium text-blue-600 bg-blue-50 transition-colors"
+            >Home</a
+          >
+          <a
+            href="courses.html"
+            class="block px-4 py-3 rounded-lg font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors"
+            >Phonics Courses</a
+          >
+          <a
+            href="workshops.html"
+            class="block px-4 py-3 rounded-lg font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors"
+            >Workshops</a
+          >
+          <a
+            href="Resources.html"
+            class="block px-4 py-3 rounded-lg font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors"
+            >Resources</a
+          >
+          <a
+            href="contact.html"
+            class="block px-4 py-3 rounded-lg font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors"
+            >Contact</a
+          >
+
+          <!-- Mobile CTA Button -->
+          <div class="pt-2 px-2">
+            <a
+              href="courses.html"
+              class="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-full font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-md hover:shadow-lg transition-all"
+            >
+              <span>Get Started</span>
+              <svg
+                class="w-4 h-4"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5 12h14m-6-7l7 7-7 7"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section
+      class="relative bg-gradient-to-r from-indigo-200 via-purple-200 to-pink-200 py-32 overflow-hidden"
+    >
+      <!-- Decorative elements -->
+      <!-- <div class="absolute left-8 top-8 opacity-60">
+        <svg
+          width="48"
+          height="48"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          class="text-orange-400"
+        >
+          <path
+            d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"
+          />
+          <path d="M8 7h6" />
+          <path d="M8 11h8" />
+        </svg>
+      </div>
+
+      <div class="absolute right-8 top-8 opacity-60">
+        <svg
+          width="48"
+          height="48"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          class="text-green-400"
+        >
+          <path d="M7 13c3 0 7-3 11-3-4 6-8 6-11 6z" />
+          <path d="M12 19c-2 0-2-3-2-3s-1-2 2-5c3 3 2 5 2 5s0 3-2 3z" />
+        </svg>
+      </div> -->
+
+      <div class="text-start max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Main Heading -->
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          Phonics Courses
+        </h1>
+        <p class="text-xl md:text-2xl max-w-3xl">
+          Comprehensive phonics education tailored for teenagers aged 7-19
+        </p>
+      </div>
+    </section>
+
+    <!-- Course Filter -->
+    <!-- <section class="py-8 bg-white border-b" x-data="{ selectedAge: 'all' }">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h3 class="text-lg font-semibold mb-4">Filter by Age Group</h3>
+          <div class="flex flex-wrap justify-center gap-4">
+            <button
+              @click="selectedAge = 'all'"
+              :class="selectedAge === 'all' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'"
+              class="px-4 py-2 rounded-lg font-medium transition"
+            >
+              All Ages
+            </button>
+            <button
+              @click="selectedAge = '7-11'"
+              :class="selectedAge === '7-11' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'"
+              class="px-4 py-2 rounded-lg font-medium transition"
+            >
+              Ages 7-11
+            </button>
+            <button
+              @click="selectedAge = '12-16'"
+              :class="selectedAge === '12-16' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'"
+              class="px-4 py-2 rounded-lg font-medium transition"
+            >
+              Ages 12-16
+            </button>
+            <button
+              @click="selectedAge = '16-19'"
+              :class="selectedAge === '16-19' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'"
+              class="px-4 py-2 rounded-lg font-medium transition"
+            >
+              Ages 16-19
+            </button>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Courses Grid -->
+    <section
+      class="py-20 bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 relative overflow-hidden"
+      x-data="{ selectedAge: 'all' }"
+    >
+      <!-- Background decorative elements -->
+      <div
+        class="absolute inset-0 overflow-hidden pointer-events-none"
+        aria-hidden="true"
+      >
+        <div
+          class="absolute -top-10 -left-10 w-40 h-40 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full opacity-10 animate-pulse"
+        ></div>
+        <div
+          class="absolute top-1/2 -right-20 w-60 h-60 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full opacity-10 animate-pulse"
+          style="animation-delay: 1s"
+        ></div>
+        <div
+          class="absolute -bottom-10 left-1/3 w-32 h-32 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full opacity-10 animate-pulse"
+          style="animation-delay: 2s"
+        ></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Foundation Phonics -->
+          <div
+            class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition"
+          >
+            <img
+              src="https://img.freepik.com/free-vector/cute-abc-letters-illustration_53876-64608.jpg?semt=ais_hybrid&w=740&q=80"
+              alt="Beginner Phonics"
+              class="w-full h-62 object-cover"
+            />
+            <div class="p-6">
+              <span
+                class="inline-block px-3 py-1 text-xs font-bold rounded-full bg-yellow-100 text-yellow-800 mb-3"
+                >Ages 7–9</span
+              >
+              <h4 class="text-xl font-bold text-gray-900 mb-2">
+                Phonics Basics
+              </h4>
+              <p class="text-gray-600 mb-4">
+                Learn the sounds of letters and simple words through fun games
+                and songs.
+              </p>
+              <div
+                class="flex items-center justify-between h-20 p-5 border-t border-gray-300"
+              >
+                <div class="text-lg font-bold text-yellow-400">Free</div>
+                <a
+                  href="#"
+                  class="inline-flex items-center px-4 py-2 rounded-lg font-semibold bg-yellow-400 text-purple-900 hover:bg-yellow-300 transition"
+                >
+                  View Details
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Intermediate Phonics -->
+          <div
+            class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition"
+          >
+            <img
+              src="https://img.freepik.com/free-vector/colorful-phonics-illustration_23-2149354709.jpg?semt=ais_hybrid&w=740&q=80"
+              alt="Intermediate Phonics"
+              class="w-full h-62 object-cover"
+            />
+            <div class="p-6">
+              <span
+                class="inline-block px-3 py-1 text-xs font-bold rounded-full bg-blue-100 text-blue-800 mb-3"
+                >Ages 10–12</span
+              >
+              <h4 class="text-xl font-bold text-gray-900 mb-2">
+                Blending & Reading
+              </h4>
+              <p class="text-gray-600 mb-4">
+                Master blending sounds into words and improve reading fluency
+                with exercises.
+              </p>
+              <div
+                class="flex items-center justify-between h-20 p-5 border-t border-gray-300"
+              >
+                <div class="text-lg font-bold text-blue-600">Free</div>
+                <a
+                  href="#"
+                  class="inline-flex items-center px-4 py-2 rounded-lg font-semibold bg-blue-600 text-white hover:bg-blue-500 transition"
+                >
+                  View Details
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Advanced Phonics -->
+          <div
+            class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition"
+          >
+            <img
+              src="https://img.freepik.com/free-vector/back-school-education-concept_23-2148603076.jpg?semt=ais_hybrid&w=740&q=80"
+              alt="Advanced Phonics"
+              class="w-full h-62 object-cover"
+            />
+            <div class="p-6">
+              <span
+                class="inline-block px-3 py-1 text-xs font-bold rounded-full bg-emerald-100 text-emerald-800 mb-3"
+                >Ages 13–16</span
+              >
+              <h4 class="text-xl font-bold text-gray-900 mb-2">
+                Advanced Reading
+              </h4>
+              <p class="text-gray-600 mb-4">
+                Build vocabulary, comprehension skills, and prepare for advanced
+                reading levels.
+              </p>
+              <div
+                class="flex items-center justify-between h-20 p-5 border-t border-gray-300"
+              >
+                <div class="text-lg font-bold text-gray-400">Free</div>
+                <button
+                  disabled
+                  class="px-4 py-2 rounded-lg font-semibold bg-gray-200 text-gray-600 cursor-not-allowed"
+                >
+                  Coming Soon
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phonics Mastery -->
+          <div
+            class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition"
+          >
+            <img
+              src="https://store.pelangibooks.com/cdn/shop/products/Fun_20at_20the_20Mall_20CV_540x530.jpg?v=1709722457"
+              alt="Reading Fun Stories"
+              class="w-full h-62 object-cover"
+            />
+            <div class="p-6">
+              <span
+                class="inline-block px-3 py-1 text-xs font-bold rounded-full bg-purple-100 text-purple-800 mb-3"
+                >Ages 8–10</span
+              >
+              <h4 class="text-xl font-bold text-gray-900 mb-2">
+                Reading Fun Stories
+              </h4>
+              <p class="text-gray-600 mb-4">
+                Improve fluency by reading simple and engaging short stories
+                designed for kids.
+              </p>
+              <div
+                class="flex items-center justify-between h-20 p-5 border-t border-gray-300"
+              >
+                <div class="text-lg font-bold text-purple-500">$69</div>
+                <a
+                  href="#"
+                  class="inline-flex items-center px-4 py-2 rounded-lg font-semibold bg-purple-500 text-white hover:bg-purple-400 transition"
+                >
+                  View Details
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Remedial Phonics -->
+          <div
+            class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition"
+          >
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUntigJxdYlWY90gKhXeYT-rSzzb-FdCuYlZpVtCcfK-ivrKje582GeHLveGP-G4KB9Zo&usqp=CAU"
+              alt="Sight Words"
+              class="w-full h-62 object-cover"
+            />
+            <div class="p-6">
+              <span
+                class="inline-block px-3 py-1 text-xs font-bold rounded-full bg-orange-100 text-orange-800 mb-3"
+                >Ages 6–9</span
+              >
+              <h4 class="text-xl font-bold text-gray-900 mb-2">Sight Words</h4>
+              <p class="text-gray-600 mb-4">
+                Memorize common words that appear frequently in English texts
+                for smoother reading.
+              </p>
+              <div
+                class="flex items-center justify-between h-20 p-5 border-t border-gray-300"
+              >
+                <div class="text-lg font-bold text-orange-500">$39</div>
+                <a
+                  href="#"
+                  class="inline-flex items-center px-4 py-2 rounded-lg font-semibold bg-orange-500 text-white hover:bg-orange-400 transition"
+                >
+                  View Details
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Intensive Phonics Bootcamp -->
+          <div
+            class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition"
+          >
+            <img
+              src="https://i.ytimg.com/vi/YR9eynWhz38/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLA5Lf--Mtl1-Fl57RN4_NSVlaCiBA"
+              alt="Vowel Practice"
+              class="w-full h-62 object-cover"
+            />
+            <div class="p-6">
+              <span
+                class="inline-block px-3 py-1 text-xs font-bold rounded-full bg-blue-100 text-blue-800 mb-3"
+                >Ages 7–9</span
+              >
+              <h4 class="text-xl font-bold text-gray-900 mb-2">
+                Vowel Practice
+              </h4>
+              <p class="text-gray-600 mb-4">
+                Learn long and short vowel sounds through interactive exercises
+                and songs.
+              </p>
+              <div
+                class="flex items-center justify-between h-20 p-5 border-t border-gray-300"
+              >
+                <div class="text-lg font-bold text-blue-500">$59</div>
+                <a
+                  href="#"
+                  class="inline-flex items-center px-4 py-2 rounded-lg font-semibold bg-blue-500 text-white hover:bg-blue-400 transition"
+                >
+                  View Details
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Course Information -->
+    <!-- <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h3 class="text-3xl font-bold text-gray-900 mb-4">
+            Course Information
+          </h3>
+          <p class="text-lg text-gray-600">
+            Everything you need to know about our phonics courses
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="text-center">
+            <div
+              class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <svg
+                class="w-8 h-8 text-blue-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+            </div>
+            <h4 class="text-lg font-semibold mb-2">Flexible Schedule</h4>
+            <p class="text-gray-600">
+              Classes available weekdays, evenings, and weekends
+            </p>
+          </div>
+
+          <div class="text-center">
+            <div
+              class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <svg
+                class="w-8 h-8 text-green-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+            </div>
+            <h4 class="text-lg font-semibold mb-2">Certified Instructors</h4>
+            <p class="text-gray-600">
+              All teachers are certified in phonics instruction
+            </p>
+          </div>
+
+          <div class="text-center">
+            <div
+              class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <svg
+                class="w-8 h-8 text-purple-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C20.832 18.477 19.246 18 17.5 18c-1.746 0-3.332.477-4.5 1.253"
+                ></path>
+              </svg>
+            </div>
+            <h4 class="text-lg font-semibold mb-2">Course Materials</h4>
+            <p class="text-gray-600">
+              All materials and resources included in course fee
+            </p>
+          </div>
+
+          <div class="text-center">
+            <div
+              class="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <svg
+                class="w-8 h-8 text-yellow-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"
+                ></path>
+              </svg>
+            </div>
+            <h4 class="text-lg font-semibold mb-2">Ongoing Support</h4>
+            <p class="text-gray-600">
+              Continued support after course completion
+            </p>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Call to Action -->
+    <section class="bg-blue-200 text-white py-16">
+      <div
+        class="container mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-12"
+      >
+        <!-- Left side: Image -->
+        <div class="">
+          <img
+            src="https://html.topylo.com/istudy-prv/assets/images/newsletter/newsletter-thumb-02.webp"
+            alt="Phonics learning illustration"
+            class="w-80%"
+          />
+        </div>
+
+        <!-- Right side: Text -->
+        <div class="">
+          <h2 class="text-3xl lg:text-4xl font-bold mb-6">
+            Ready to Start Your Phonics Journey?
+          </h2>
+          <p class="text-lg mb-8">
+            Join thousands of young learners who have improved their reading
+            skills with our expert instruction. Fun, engaging, and effective
+            learning starts here.
+          </p>
+          <button
+            class="bg-white text-blue-600 px-6 py-3 rounded-xl font-semibold shadow hover:bg-blue-100 transition"
+          >
+            Get Started
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div>
+            <h5 class="text-lg font-semibold mb-4">Organization X</h5>
+            <p class="text-gray-300">
+              Empowering teenagers with essential phonics skills for academic
+              and personal success.
+            </p>
+          </div>
+
+          <div>
+            <h5 class="text-lg font-semibold mb-4">Quick Links</h5>
+            <ul class="space-y-2 text-gray-300">
+              <li><a href="index.html" class="hover:text-white">Home</a></li>
+              <li>
+                <a href="courses.html" class="hover:text-white"
+                  >Phonics Courses</a
+                >
+              </li>
+              <li>
+                <a href="workshops.html" class="hover:text-white">Workshops</a>
+              </li>
+              <li>
+                <a href="contact.html" class="hover:text-white">Contact</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h5 class="text-lg font-semibold mb-4">Contact Info</h5>
+            <ul class="space-y-2 text-gray-300">
+              <li>📧 info@organizationx.com</li>
+              <li>📞 (555) 123-4567</li>
+              <li>📍 123 Education Street<br />Learning City, LC 12345</li>
+            </ul>
+          </div>
+
+          <div>
+            <h5 class="text-lg font-semibold mb-4">Follow Us</h5>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-300 hover:text-white">Facebook</a>
+              <a href="#" class="text-gray-300 hover:text-white">Twitter</a>
+              <a href="#" class="text-gray-300 hover:text-white">Instagram</a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300"
+        >
+          <p>&copy; 2024 Organization X. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
