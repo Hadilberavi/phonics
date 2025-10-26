@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
@@ -25,7 +25,7 @@
   </head>
 
   <body class="bg-gray-50 font-family">
-    <nav
+   <nav
       class="bg-white/90 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50 transition-all duration-300"
       x-data="{ mobileOpen: false, scrolled: false }"
       @scroll.window="scrolled = window.pageYOffset > 10"
@@ -160,6 +160,12 @@
                   </g>
                 </g>
                 <g id="p">
+                  <g transform="matrix(1.21843,0,0,1.28054,-234.189,-1030.6)">
+                    <path
+                      d="M2251.69,1126.36C2317.33,1126.36 2353.08,1167.73 2363.29,1186.5C2373.58,1205.43 2376.74,1222.59 2376.74,1246.11L2376.74,1253.91C2376.74,1277.6 2371.62,1299.07 2361.25,1318.32C2351.05,1337.28 2308.94,1378.72 2249.68,1378.72C2249.58,1378.72 2249.49,1378.72 2249.39,1378.73L2177.56,1380.38C2163.66,1380.69 2152.57,1391.51 2152.57,1404.73L2152.57,1489.31C2152.57,1495.03 2150.18,1500.53 2145.92,1504.58C2141.67,1508.62 2135.89,1510.9 2129.88,1510.9L2083.53,1510.9C2071.64,1510.9 2062.01,1501.73 2062,1490.42L2061.85,1140.05C2061.85,1136.42 2063.37,1132.94 2066.06,1130.37C2068.76,1127.8 2072.42,1126.36 2076.23,1126.36L2251.69,1126.36ZM2162.73,1279.76C2162.75,1291.96 2173.16,1301.85 2185.98,1301.85L2224.62,1301.85C2265.7,1301.85 2273.28,1268.26 2273.28,1255.32L2273.28,1251.32C2273.28,1237.8 2262.03,1209.26 2224.47,1209.26L2182.27,1209.26L2178.42,1209.62L2174.74,1210.69L2171.36,1212.41L2168.37,1214.75L2165.91,1217.6L2164.11,1220.83L2163,1224.32L2162.63,1227.99L2162.73,1279.76Z"
+                      style="fill: white"
+                    />
+                  </g>
                   <g transform="matrix(1.21843,0,0,1.28054,-234.189,-1030.6)">
                     <path
                       d="M2251.69,1103.58C2330.07,1103.58 2372.36,1153.62 2384.55,1176.04C2396.66,1198.31 2400.68,1218.43 2400.68,1246.11L2400.68,1253.91C2400.68,1281.42 2394.6,1306.35 2382.56,1328.7C2370.38,1351.33 2320.53,1401.43 2249.83,1401.5L2178.14,1403.15C2177.23,1403.17 2176.51,1403.87 2176.51,1404.73L2176.51,1489.31C2176.51,1501.07 2171.59,1512.36 2162.85,1520.68C2154.1,1529 2142.24,1533.68 2129.88,1533.68L2083.53,1533.68C2058.43,1533.68 2038.07,1514.32 2038.06,1490.43L2037.92,1140.06C2037.91,1130.38 2041.95,1121.11 2049.13,1114.27C2056.32,1107.43 2066.07,1103.58 2076.23,1103.58L2251.69,1103.58ZM2251.69,1126.36L2076.23,1126.36C2072.42,1126.36 2068.76,1127.8 2066.06,1130.37C2063.37,1132.94 2061.85,1136.42 2061.85,1140.05L2062,1490.42C2062.01,1501.73 2071.64,1510.9 2083.53,1510.9L2129.88,1510.9C2135.89,1510.9 2141.67,1508.62 2145.92,1504.58C2150.18,1500.53 2152.57,1495.03 2152.57,1489.31L2152.57,1404.73C2152.57,1391.51 2163.66,1380.69 2177.56,1380.38L2249.39,1378.73C2249.49,1378.72 2249.58,1378.72 2249.68,1378.72C2308.94,1378.72 2351.05,1337.28 2361.25,1318.32C2371.62,1299.07 2376.74,1277.6 2376.74,1253.91L2376.74,1246.11C2376.74,1222.59 2373.58,1205.43 2363.29,1186.5C2353.08,1167.73 2317.33,1126.36 2251.69,1126.36ZM2162.73,1279.76L2162.63,1227.99L2163,1224.32L2164.11,1220.83L2165.91,1217.6L2168.37,1214.75L2171.36,1212.41L2174.74,1210.69L2178.42,1209.62L2182.27,1209.26L2224.47,1209.26C2262.03,1209.26 2273.28,1237.8 2273.28,1251.32L2273.28,1255.32C2273.28,1268.26 2265.7,1301.85 2224.62,1301.85L2185.98,1301.85C2173.16,1301.85 2162.75,1291.96 2162.73,1279.76Z"
@@ -517,7 +523,7 @@
 
             <!-- Desktop CTA Button -->
             <a
-              href="courses.html"
+              href="index.html#courses"
               class="ml-2 inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-white bg-gradient-to-r from-pink-500 to-orange-400 shadow-md hover:shadow-lg hover:from-pink-600 hover:to-orange-500 transform hover:-translate-y-0.5 transition-all duration-200"
             >
               <span>Get Started</span>
@@ -579,7 +585,7 @@
       </div>
 
       <!-- Mobile Navigation -->
-      <div
+       <div
         x-show="mobileOpen"
         x-collapse
         class="lg:hidden bg-white border-t border-gray-100 shadow-lg"
@@ -590,21 +596,13 @@
             class="block px-4 py-3 rounded-lg font-medium text-blue-600 bg-blue-50 transition-colors"
             >Home</a
           >
-          <a
-            href="courses.html"
-            class="block px-4 py-3 rounded-lg font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors"
-            >Phonics Courses</a
-          >
+       
           <a
             href="workshops.html"
             class="block px-4 py-3 rounded-lg font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors"
             >Workshops</a
           >
-          <a
-            href="Resources.html"
-            class="block px-4 py-3 rounded-lg font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors"
-            >Resources</a
-          >
+       
           <a
             href="contact.html"
             class="block px-4 py-3 rounded-lg font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors"
@@ -614,7 +612,7 @@
           <!-- Mobile CTA Button -->
           <div class="pt-2 px-2">
             <a
-              href="courses.html"
+              href="index.html#courses"
               class="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-full font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-md hover:shadow-lg transition-all"
             >
               <span>Get Started</span>
@@ -676,7 +674,7 @@
         >
           <div class="relative h-64 md:h-72 overflow-hidden">
             <img
-              src="https://www.hookedonphonics.com/wp-content/uploads/2024/07/Shot_13_176-768x512.jpg"
+              src="images/w1.jpg"
               alt="Reading Club Workshop"
               class="w-full h-full object-cover object-center hover:scale-110 transition-transform duration-700"
             />
@@ -717,14 +715,8 @@
                 >
                   Reading Club Workshop
                 </h2>
-                <span
-                  class="inline-block bg-gradient-to-r from-green-400 to-emerald-500 text-white px-4 py-2 text-lg font-black rounded-full shadow-lg border-3 border-white"
-                >
-                  ⭐ Beginner
-                </span>
               </div>
             </div>
-
             <p class="text-xl leading-relaxed text-gray-700 mb-8 font-medium">
               Interactive reading sessions focusing on phonics fundamentals and
               comprehension skills. Perfect for building confidence in reading
@@ -808,22 +800,22 @@
                 <span
                   class="bg-gradient-to-br from-blue-100 to-blue-200 text-blue-800 border-4 border-blue-300 py-4 px-4 rounded-2xl text-center text-base font-black shadow-lg hover:scale-105 transition-transform duration-300"
                 >
-                  📖 Guided reading
+                  📖 Guided reading to enhance reading skills
                 </span>
                 <span
                   class="bg-gradient-to-br from-purple-100 to-purple-200 text-purple-800 border-4 border-purple-300 py-4 px-4 rounded-2xl text-center text-base font-black shadow-lg hover:scale-105 transition-transform duration-300"
                 >
-                  🔤 Phonics practice
+                  🔤 Practicing phonics and understanding phonetics.
                 </span>
                 <span
                   class="bg-gradient-to-br from-pink-100 to-pink-200 text-pink-800 border-4 border-pink-300 py-4 px-4 rounded-2xl text-center text-base font-black shadow-lg hover:scale-105 transition-transform duration-300"
                 >
-                  📚 Vocabulary building
+                  📚 Building vocabulary through engaging texts.
                 </span>
                 <span
                   class="bg-gradient-to-br from-green-100 to-green-200 text-green-800 border-4 border-green-300 py-4 px-4 rounded-2xl text-center text-base font-black shadow-lg hover:scale-105 transition-transform duration-300"
                 >
-                  💬 Story discussion
+                  🗣️ Read aloud to build confidence.
                 </span>
               </div>
             </div>
@@ -844,7 +836,7 @@
         >
           <div class="relative h-64 md:h-72 overflow-hidden">
             <img
-              src="https://images.ctfassets.net/2ql69mthp94m/rVaz8piqD7OixoMlFspVP/bcdb33ec67d7fb4c233845ed51466761/nursery_rhymes_720x432.jpg?fm=webp&q=70"
+              src="images/w2.jpg"
               alt="Songs & Rhymes Workshop"
               class="w-full h-full object-cover object-center hover:scale-110 transition-transform duration-700"
             />
@@ -973,22 +965,18 @@
                 <span
                   class="bg-gradient-to-br from-purple-100 to-purple-200 text-purple-800 border-4 border-purple-300 py-4 px-4 rounded-2xl text-center text-base font-black shadow-lg hover:scale-105 transition-transform duration-300"
                 >
-                  🎤 Phonics songs
+                  🎤 Educational songs to learn phonics in a fun way.
                 </span>
-                <span
-                  class="bg-gradient-to-br from-pink-100 to-pink-200 text-pink-800 border-4 border-pink-300 py-4 px-4 rounded-2xl text-center text-base font-black shadow-lg hover:scale-105 transition-transform duration-300"
-                >
-                  🥁 Rhythm practice
-                </span>
+               
                 <span
                   class="bg-gradient-to-br from-blue-100 to-blue-200 text-blue-800 border-4 border-blue-300 py-4 px-4 rounded-2xl text-center text-base font-black shadow-lg hover:scale-105 transition-transform duration-300"
                 >
-                  🧠 Memory techniques
+                  🧠 Memory techniques to enhance comprehension and retention.
                 </span>
                 <span
                   class="bg-gradient-to-br from-green-100 to-green-200 text-green-800 border-4 border-green-300 py-4 px-4 rounded-2xl text-center text-base font-black shadow-lg hover:scale-105 transition-transform duration-300"
                 >
-                  👥 Group singing
+                  👥 Group interaction in a fun environment
                 </span>
               </div>
             </div>
@@ -1003,8 +991,8 @@
           </div>
         </div>
 
-        <!-- Story Club Workshop -->
-        <div
+        <!--Story Club Workshop  --> 
+       <!--  <div
           class="bg-white rounded-3xl shadow-md overflow-hidden transition-all duration-150 transform hover:-translate-y-3 hover:scale-[1.02] border-4 border-yellow-200"
         >
           <div class="relative h-64 md:h-72 overflow-hidden">
@@ -1167,15 +1155,16 @@
               </button>
             </div>
           </div>
-        </div>
+        </div>-->
 
+        
         <!-- Recreational Activities Club -->
         <div
           class="bg-white rounded-3xl shadow-md overflow-hidden transition-all duration-150 transform hover:-translate-y-3 hover:scale-[1.02] border-4 border-green-200 font-[Baloo_2]"
         >
           <div class="relative h-64 md:h-72 overflow-hidden">
             <img
-              src="https://www.picresorts.cn.com/data/file/visual_management/3397387706_E6ZiIbvw_7e91608a8c1f8653e810655e1bcdf69bba924039.jpg"
+              src="images/w3.jpg"
               alt="Recreational Activities"
               class="w-full h-full object-contain object-center object-cover hover:scale-110 transition-transform duration-700"
             />
@@ -1202,7 +1191,7 @@
             <span
               class="absolute top-8 right-8 bg-gradient-to-r from-green-500 to-teal-400 text-white shadow-xl backdrop-blur-sm px-6 py-3 text-md font-black rounded-full border-4 border-white"
             >
-              🌿 Outdoor Fun
+              🎮 Smart Games
             </span>
           </div>
 
@@ -1212,7 +1201,7 @@
                 <h2
                   class="text-2xl md:text-3xl font-black text-gray-900 mb-4 drop-shadow-md"
                 >
-                  Recreational Activities Club
+                  Smart Activities Club
                 </h2>
                 <span
                   class="inline-block bg-gradient-to-r from-teal-400 to-green-500 text-white px-4 py-2 text-lg font-black rounded-full shadow-md border-3 border-white"
@@ -1305,23 +1294,19 @@
                 <span
                   class="bg-gradient-to-br from-green-100 to-green-200 text-green-800 border-4 border-green-300 py-4 px-4 rounded-2xl text-center text-base font-black shadow-lg hover:scale-105 transition-transform duration-300"
                 >
-                  🏃 Outdoor games
+                  Educational games to enhance thinking skills
                 </span>
                 <span
                   class="bg-gradient-to-br from-blue-100 to-blue-200 text-blue-800 border-4 border-blue-300 py-4 px-4 rounded-2xl text-center text-base font-black shadow-lg hover:scale-105 transition-transform duration-300"
                 >
-                  🎨 Art & crafts
+                  ⁠A space for conversation and expressing opinions
                 </span>
                 <span
                   class="bg-gradient-to-br from-orange-100 to-orange-200 text-orange-800 border-4 border-orange-300 py-4 px-4 rounded-2xl text-center text-base font-black shadow-lg hover:scale-105 transition-transform duration-300"
                 >
-                  ⚽ Team challenges
+                  Group challenges to foster collaboration among students
                 </span>
-                <span
-                  class="bg-gradient-to-br from-teal-100 to-teal-200 text-teal-800 border-4 border-teal-300 py-4 px-4 rounded-2xl text-center text-base font-black shadow-lg hover:scale-105 transition-transform duration-300"
-                >
-                  🎵 Music & rhythm
-                </span>
+               
               </div>
             </div>
 
@@ -1844,12 +1829,7 @@
                 <span class="mr-2 font-bold text-pink-500 text-xl">→</span
                 ><a href="index.html" class="hover:text-white">Home</a>
               </li>
-              <li>
-                <span class="mr-2 font-bold text-pink-500 text-xl">→</span>
-                <a href="courses.html" class="hover:text-white"
-                  >Phonics Courses</a
-                >
-              </li>
+          
               <li>
                 <span class="mr-2 font-bold text-pink-500 text-xl">→</span>
                 <a href="workshops.html" class="hover:text-white">Workshops</a>
@@ -1858,19 +1838,16 @@
                 <span class="mr-2 font-bold text-pink-500 text-xl">→</span>
                 <a href="contact.html" class="hover:text-white">Contact</a>
               </li>
-              <li>
-                <span class="mr-2 font-bold text-pink-500 text-xl">→</span>
-                <a href="contact.html" class="hover:text-white">Resources</a>
-              </li>
+             
             </ul>
           </div>
 
           <div>
             <h5 class="text-lg font-semibold mb-4">Contact Info</h5>
             <ul class="space-y-2 text-gray-300">
-              <li>📧 info@organizationx.com</li>
-              <li>📞 (555) 123-4567</li>
-              <li>📍 123 Education Street<br />Learning City, LC 12345</li>
+              <li>📧 tap.abc.edu@gmail.com</li>
+              <li>📞 (534) 838-7340</li>
+              
             </ul>
           </div>
 
