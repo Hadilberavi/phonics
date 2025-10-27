@@ -1,8 +1,7 @@
-import { defineConfig } from 'vite'
-import tailwindcss from '@tailwindcss/vite'
+import { defineConfig } from "vite";
+import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
-    root: 'src',
-  plugins: [
-    tailwindcss(),
-  ],
-})
+  root: "src",
+  base: "/phonics/",
+  plugins: [tailwindcss()],
+});
