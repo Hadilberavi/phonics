@@ -31,7 +31,7 @@
       @scroll.window="scrolled = window.pageYOffset > 10"
     >
       <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-24">
-        <div class="flex justify-between items-center h-16">
+        <div class="flex justify-between items-center h-20">
           <!-- Logo -->
           <svg
             width="150"
@@ -494,17 +494,61 @@
           </svg>
 
           <!-- Desktop Navigation -->
-          <div class="hidden lg:flex items-center space-x-1">
+          <div class="hidden lg:flex items-center space-x-1 text-xl">
             <a
               href="index.html"
               class="px-4 py-2.5 rounded-lg font-medium text-gray-700 hover:text-pink-600 hover:bg-pink-50 transition-all duration-200 relative group"
               >Home</a
             >
-            <!-- <a
-              href="courses.html"
-              class="px-4 py-2.5 rounded-lg font-medium text-gray-700 hover:text-pink-600 hover:bg-pink-50 transition-all duration-200 relative group"
-              >Phonics Courses</a
-            > -->
+            <!-- course -->
+            <!-- Nav item -->
+            <div class="relative inline-block group">
+              <!-- Başlık link olarak -->
+              <a
+                href="courses.html"
+                class="px-4 py-2.5 rounded-lg font-medium text-gray-700 hover:text-pink-600 hover:bg-pink-50 transition-all duration-200 flex items-center gap-1"
+              >
+                Phonics Courses
+                <svg
+                  class="w-4 h-4 transition-transform group-hover:rotate-180"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </a>
+
+              <!-- Dropdown list (hover ile açılır) -->
+              <div
+                class="absolute left-1/2 mt-2 w-56 bg-white border border-gray-400 rounded-lg py-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+              >
+                <a
+                  href="https://nas.io/tap-abc"
+                  class="block px-6 py-2 text-gray-800 font-semibold hover:bg-gray-100 rounded-md transition-colors duration-200"
+                >
+                  Beginner Level
+                </a>
+                <a
+                  href="https://nas.io/tap-abc"
+                  class="block px-6 py-2 text-gray-800 font-semibold hover:bg-gray-100 rounded-md mt-2 transition-colors duration-200"
+                >
+                  Intermediate Level
+                </a>
+                <a
+                  href="https://nas.io/tap-abc"
+                  class="block px-6 py-2 text-gray-800 font-semibold hover:bg-gray-100 rounded-md mt-2 transition-colors duration-200"
+                >
+                  Advanced Level
+                </a>
+              </div>
+            </div>
+
             <a
               href="workshops.html"
               class="px-4 py-2.5 rounded-lg font-medium text-gray-700 hover:text-pink-600 hover:bg-pink-50 transition-all duration-200 relative group"
@@ -523,7 +567,7 @@
 
             <!-- Desktop CTA Button -->
             <a
-              href="index.html#courses"
+              href="#courses"
               class="ml-2 inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-white bg-gradient-to-r from-pink-500 to-orange-400 shadow-md hover:shadow-lg hover:from-pink-600 hover:to-orange-500 transform hover:-translate-y-0.5 transition-all duration-200"
             >
               <span>Get Started</span>
@@ -590,7 +634,7 @@
         x-collapse
         class="lg:hidden bg-white border-t border-gray-100 shadow-lg"
       >
-        <div class="px-2 pt-2 pb-4 space-y-1">
+        <div class="px-2 pt-2 pb-4 space-y-1 text-xl">
           <a
             href="index.html"
             class="block px-4 py-3 rounded-lg font-medium text-blue-600 bg-blue-50 transition-colors"
@@ -602,6 +646,55 @@
             class="block px-4 py-3 rounded-lg font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors"
             >Workshops</a
           >
+          <!-- Courses Nav Item -->
+          <div class="space-y-1" x-data="{ open: false }">
+            <div class="flex justify-between items-center">
+              <!-- Başlık link olarak -->
+              <a
+                href="courses.html"
+                class="flex-1 px-4 py-3 rounded-lg font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors"
+              >
+                Courses
+              </a>
+
+              <!-- Ok simgesi dropdown aç/kapa -->
+              <button @click="open = !open" class="px-4 py-3">
+                <svg
+                  :class="{'rotate-180': open}"
+                  class="w-4 h-4 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <!-- Dropdown listesi -->
+            <div x-show="open" x-collapse class="pl-4 space-y-1 mt-1">
+              <a
+                href="https://nas.io/tap-abc"
+                class="block px-4 py-2 text-gray-700 font-semibold hover:bg-gray-100 rounded-md transition-colors"
+                >Beginner Level</a
+              >
+              <a
+                href="https://nas.io/tap-abc"
+                class="block px-4 py-2 text-gray-700 font-semibold hover:bg-gray-100 rounded-md transition-colors"
+                >Intermediate Level</a
+              >
+              <a
+                href="https://nas.io/tap-abc"
+                class="block px-4 py-2 text-gray-700 font-semibold hover:bg-gray-100 rounded-md transition-colors"
+                >Advanced Level</a
+              >
+            </div>
+          </div>
 
           <a
             href="contact.html"
@@ -612,7 +705,7 @@
           <!-- Mobile CTA Button -->
           <div class="pt-2 px-2">
             <a
-              href="index.html#courses"
+              href="#courses"
               class="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-full font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-md hover:shadow-lg transition-all"
             >
               <span>Get Started</span>
