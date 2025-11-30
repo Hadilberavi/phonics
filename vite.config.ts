@@ -13,6 +13,12 @@ export default defineConfig({
         cources: resolve(__dirname, "src/courses.html"),
         resources: resolve(__dirname, "src/Resources.html"),
         workshops: resolve(__dirname, "src/workshops.html"),
+        biggnerdetails: resolve(__dirname, "src/biggner-details.html"),
+        advanceddetails: resolve(__dirname, "src/Advanced-details.html"),
+        Intermediatedetails: resolve(
+          __dirname,
+          "src/Intermediate-details.html"
+        ),
       },
     },
   },
