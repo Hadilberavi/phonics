@@ -14,11 +14,8 @@ export default defineConfig({
         resources: resolve(__dirname, "src/Resources.html"),
         workshops: resolve(__dirname, "src/workshops.html"),
         biggnerdetails: resolve(__dirname, "src/biggner-details.html"),
-        advanceddetails: resolve(__dirname, "src/Advanced-details.html"),
-        Intermediatedetails: resolve(
-          __dirname,
-          "src/Intermediate-details.html"
-        ),
+        advanceddetails: resolve(__dirname, "src/Explorer-details.html"),
+        Intermediatedetails: resolve(__dirname, "src/Learner-details.html"),
       },
     },
   },
