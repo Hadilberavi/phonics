@@ -4,7 +4,7 @@ import { resolve } from "path";
 
 export default defineConfig({
   root: "src",
-  base: "/phonics/",
+  base: "/",
   build: {
     rollupOptions: {
       input: {
