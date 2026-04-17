@@ -11,12 +11,12 @@
 </head>
 
 <body class="bg-gray-50 font-family">
- <nav class="bg-white/90 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50 transition-all duration-300"
+  <nav class="bg-white/90 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50 transition-all duration-300"
     x-data="{ mobileOpen: false, scrolled: false }" @scroll.window="scrolled = window.pageYOffset > 10">
     <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-24">
       <div class="flex justify-between items-center h-20">
         <!-- Logo -->
-         <a href="index.html">        <svg width="150" height="120" viewBox="0 0 4845 1190" version="1.1" xmlns="http://www.w3.org/2000/svg"
+        <a href="index.html"> <svg width="150" height="120" viewBox="0 0 4845 1190" version="1.1" xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="
               fill-rule: evenodd;
               clip-rule: evenodd;
@@ -341,12 +341,12 @@
 
         <!-- Desktop Navigation -->
         <div class="hidden lg:flex items-center space-x-1 text-xl">
-          <a href="index.html"
+          <a href="index.html" data-i18n="nav_home"
             class="px-4 py-2.5 rounded-lg font-medium text-gray-700 hover:text-pink-600 hover:bg-pink-50 transition-all duration-200 relative group">Home</a>
           <!-- Nav item -->
           <div class="relative inline-block group">
             <!-- Başlık link olarak -->
-            <a href="courses.html"
+            <a href="courses.html" data-i18n="nav_courses"
               class="px-4 py-2.5 rounded-lg font-medium text-gray-700 hover:text-pink-600 hover:bg-pink-50 transition-all duration-200 flex items-center gap-1">
               Phonics Courses
               <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor"
@@ -358,39 +358,31 @@
             <!-- Dropdown list (hover ile açılır) -->
             <div
               class="absolute left-1/2 mt-2 w-56 bg-white border border-gray-400 rounded-lg py-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-              <a href="biggner-details.html"
+              <a href="biggner-details.html" data-i18n="nav_beginner"
                 class="block px-6 py-2 text-gray-800 font-semibold hover:bg-gray-100 rounded-md transition-colors duration-200">
                 Beginner Level
               </a>
-              <a href="Learner-details.html"
+              <a href="Learner-details.html" data-i18n="nav_learner"
                 class="block px-6 py-2 text-gray-800 font-semibold hover:bg-gray-100 rounded-md mt-2 transition-colors duration-200">
                 Learner Level
               </a>
-              <a href="Explorer-details.html"
+              <a href="Explorer-details.html" data-i18n="nav_explorer"
                 class="block px-6 py-2 text-gray-800 font-semibold hover:bg-gray-100 rounded-md mt-2 transition-colors duration-200">
                 Explorer Level
               </a>
             </div>
           </div>
 
-          <a href="workshops.html"
+          <a href="workshops.html" data-i18n="nav_workshops"
             class="px-4 py-2.5 rounded-lg font-medium text-gray-700 hover:text-pink-600 hover:bg-pink-50 transition-all duration-200 relative group">Workshops</a>
-          <!-- <a
-              href="Resources.html"
-              class="px-4 py-2.5 rounded-lg font-medium text-gray-700 hover:text-pink-600 hover:bg-pink-50 transition-all duration-200 relative group"
-              >Resources</a
-            > -->
-          <a href="contact.html"
+          <a href="contact.html" data-i18n="nav_contact"
             class="px-4 py-2.5 rounded-lg font-medium text-gray-700 hover:text-pink-600 hover:bg-pink-50 transition-all duration-200 relative group">Contact</a>
 
-          <!-- Desktop CTA Button -->
-          <a href="courses.html"
-            class="ml-2 inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-white bg-gradient-to-r from-pink-500 to-orange-400 shadow-md hover:shadow-lg hover:from-pink-600 hover:to-orange-500 ">
-            <span>Get Started</span>
-            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-7l7 7-7 7" />
-            </svg>
-          </a>
+          <!-- Desktop Language Switcher -->
+          <button onclick="toggleLanguage()"
+            class="ml-2 inline-flex items-center justify-center w-12 h-12 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-orange-400 shadow-md hover:shadow-lg hover:from-pink-600 hover:to-orange-500 transition-all duration-300">
+            <span data-i18n="nav_lang">Ar</span>
+          </button>
         </div>
 
         <!-- Mobile menu button -->
@@ -413,16 +405,16 @@
     <!-- Mobile Navigation -->
     <div x-show="mobileOpen" x-collapse class="lg:hidden bg-white border-t border-gray-100 shadow-lg">
       <div class="px-2 pt-2 pb-4 space-y-1 text-xl">
-        <a href="index.html"
+        <a href="index.html" data-i18n="nav_home"
           class="block px-4 py-3 rounded-lg font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors">Home</a>
 
-        <a href="workshops.html"
+        <a href="workshops.html" data-i18n="nav_workshops"
           class="block px-4 py-3 rounded-lg font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors">Workshops</a>
         <!-- Courses Nav Item -->
         <div class="space-y-1" x-data="{ open: false }">
           <div class="flex justify-between items-center">
             <!-- Başlık link olarak -->
-            <a href="courses.html"
+            <a href="courses.html" data-i18n="nav_courses"
               class="flex-1 px-4 py-3 rounded-lg font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors">
               Courses
             </a>
@@ -438,31 +430,28 @@
 
           <!-- Dropdown listesi -->
           <div x-show="open" x-collapse class="pl-4 space-y-1 mt-1">
-            <a href="biggner-details.html"
+            <a href="biggner-details.html" data-i18n="nav_beginner"
               class="block px-4 py-2 text-gray-700 font-semibold hover:text-blue-600 hover:bg-gray-50 rounded-md transition-colors">Beginner
               Level</a>
-            <a href="Learner-details.html"
+            <a href="Learner-details.html" data-i18n="nav_learner"
               class="block px-4 py-2 text-gray-700 font-semibold hover:text-blue-600 hover:bg-gray-50 rounded-md transition-colors">Learner
               Level</a>
-            <a href="Explorer-details.html"
+            <a href="Explorer-details.html" data-i18n="nav_explorer"
               class="block px-4 py-2 text-gray-700 font-semibold hover:text-blue-600 hover:bg-gray-50 rounded-md transition-colors">Explorer
               Level</a>
           </div>
         </div>
 
 
-        <a href="contact.html"
+        <a href="contact.html" data-i18n="nav_contact"
           class="block px-4 py-3 rounded-lg font-medium text-blue-600 bg-gray-50 transition-colors">Contact</a>
 
-        <!-- Mobile CTA Button -->
+        <!-- Mobile Language Switcher -->
         <div class="pt-2 px-2">
-          <a href="courses.html"
+          <button onclick="toggleLanguage()"
             class="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-full font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-md hover:shadow-lg transition-all">
-            <span>Get Started</span>
-            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-7l7 7-7 7" />
-            </svg>
-          </a>
+            <span data-i18n="nav_lang">Ar</span>
+          </button>
         </div>
       </div>
     </div>
@@ -470,157 +459,16 @@
   <!-- Header Section -->
   <section class="border-b border-gray-200 bg-gradient-to-r from-blue-50 to-purple-50 py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2
+      <h2 data-i18n="contact_title"
         class="text-6xl md:text-7xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-orange-400 animate-gradient">
         Contact Us
       </h2>
-      <p class="text-xl md:text-2xl max-w-3xl mx-auto">
+      <p data-i18n="contact_desc" class="text-xl md:text-2xl max-w-3xl mx-auto text-gray-700">
         Get in touch with us to learn more about our phonics courses and
         workshops
       </p>
     </div>
   </section>
-
-  <!-- Contact Content -->
-  <!-- <section class="py-16">
-    <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row gap-12 p-12 items-stretch">
-        
-        <div class="flex flex-col justify-between h-full ml-auto mt-5 md:w-1/3">
-          <h3 class="text-3xl font-bold text-gray-900 mb-6 mt-2">
-            Get in Touch
-          </h3>
-
-          <div class="space-y-6">
-            <div class="flex items-start">
-                <div
-                  class="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mr-4 mt-1"
-                >
-                  <svg
-                    class="w-6 h-6 text-blue-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                    ></path>
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                    ></path>
-                  </svg>
-                </div>
-                <div>
-                  <h4 class="text-lg font-semibold text-gray-900 mb-1">
-                    Visit Our Center
-                  </h4>
-                  <p class="text-gray-600">
-                    123 Education Street<br />Learning City, LC 12345<br />United
-                    States
-                  </p>
-                </div>
-              </div>
-
-            <div class="flex items-start">
-              <div class="bg-green-100 w-12 h-12 rounded-lg flex items-center justify-center mr-4 mt-1">
-                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
-                  </path>
-                </svg>
-              </div>
-              <div>
-                <h4 class="text-lg font-semibold text-gray-900 mb-1">
-                  Call Us
-                </h4>
-                <p class="text-gray-600">Main: (534) 838-7340</p>
-              </div>
-            </div>
-
-            <div class="flex items-start">
-              <div class="bg-purple-100 w-12 h-12 rounded-lg flex items-center justify-center mr-4 mt-1">
-                <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
-                  </path>
-                </svg>
-              </div>
-              <div>
-                <h4 class="text-lg font-semibold text-gray-900 mb-1">
-                  Email Us
-                </h4>
-                <p class="text-gray-600">tap.abc.edu@gmail.com</p>
-              </div>
-            </div>
-
-             <div class="flex items-start">
-                <div
-                  class="bg-yellow-100 w-12 h-12 rounded-lg flex items-center justify-center mr-4 mt-1"
-                >
-                  <svg
-                    class="w-6 h-6 text-yellow-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                    ></path>
-                  </svg>
-                </div>
-                <div>
-                  <h4 class="text-lg font-semibold text-gray-900 mb-1">
-                    Office Hours
-                  </h4>
-                  <p class="text-gray-600">
-                    Monday - Friday: 8:00 AM - 6:00 PM<br />Saturday: 9:00 AM -
-                    4:00 PM<br />Sunday: Closed
-                  </p>
-                </div>
-              </div>
-          </div>
-
-         
-          <div class="mt-8">
-            <h4 class="text-lg font-semibold text-gray-900 mb-4">
-              Follow Us
-            </h4>
-            <div class="flex space-x-4">
-              <a href="#"
-                class="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-700 transition">
-                <span class="sr-only">Facebook</span>
-                F
-              </a>
-              <a href="#"
-                class="bg-pink-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-pink-700 transition">
-                <span class="sr-only">Instagram</span>
-                IG
-              </a>
-              <a href="#"
-                class="bg-blue-800 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-900 transition">
-                <span class="sr-only">LinkedIn</span>
-                LI
-              </a>
-            </div>
-
-            <div class="w-full max-w-md mt-5">
-              <img src="/images/image1.png" alt="Phonics Illustration"
-                class="w-full h-auto transform hover:scale-105 transition-transform duration-500 relative z-10 animate-[float_4s_ease-in-out_infinite] drop-shadow-xl" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
 
   <section class="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
     <!-- Background decorative elements -->
@@ -638,10 +486,10 @@
 
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="text-center mb-16">
-        <h3 class="text-4xl font-bold text-gray-900 mb-4">
+        <h3 data-i18n="faq_title" class="text-4xl font-bold text-gray-900 mb-4">
           Frequently Asked Questions
         </h3>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        <p data-i18n="faq_desc" class="text-xl text-gray-600 max-w-2xl mx-auto">
           Quick answers to common questions about our programs
         </p>
       </div>
@@ -652,7 +500,7 @@
           <button @click="openFaq = openFaq === 1 ? null : 1"
             class="w-full px-6 py-5 text-left flex justify-between items-center"
             :class="openFaq === 1 ? 'bg-indigo-50' : 'hover:bg-gray-50'">
-            <span class="text-lg font-semibold text-gray-900">What age groups do we cater to?</span>
+            <span data-i18n="faq_q1" class="text-lg font-semibold text-gray-900">What age groups do we cater to?</span>
             <svg :class="openFaq === 1 ? 'rotate-180 text-indigo-600' : 'text-gray-500'"
               class="w-5 h-5 transform transition-all duration-300 flex-shrink-0" fill="none" viewBox="0 0 24 24"
               stroke="currentColor">
@@ -660,7 +508,7 @@
             </svg>
           </button>
           <div x-show="openFaq === 1" x-collapse class="px-6 pb-5">
-            <p class="text-gray-600 pt-2">
+            <p data-i18n="faq_a1" class="text-gray-600 pt-2 font-medium">
               We focus on students aged 5 to 12, offering programs to suit all
               levels.
             </p>
@@ -672,7 +520,8 @@
           <button @click="openFaq = openFaq === 2 ? null : 2"
             class="w-full px-6 py-5 text-left flex justify-between items-center"
             :class="openFaq === 2 ? 'bg-indigo-50' : 'hover:bg-gray-50'">
-            <span class="text-lg font-semibold text-gray-900">How many students are in each class?</span>
+            <span data-i18n="faq_q2" class="text-lg font-semibold text-gray-900">How many students are in each
+              class?</span>
             <svg :class="openFaq === 2 ? 'rotate-180 text-indigo-600' : 'text-gray-500'"
               class="w-5 h-5 transform transition-all duration-300 flex-shrink-0" fill="none" viewBox="0 0 24 24"
               stroke="currentColor">
@@ -680,7 +529,7 @@
             </svg>
           </button>
           <div x-show="openFaq === 2" x-collapse class="px-6 pb-5">
-            <p class="text-gray-600 pt-2">
+            <p data-i18n="faq_a2" class="text-gray-600 pt-2 font-medium">
               Each class consists of 6 to 8 students, ensuring a personalized
               and effective learning experience.
             </p>
@@ -692,7 +541,8 @@
           <button @click="openFaq = openFaq === 3 ? null : 3"
             class="w-full px-6 py-5 text-left flex justify-between items-center"
             :class="openFaq === 3 ? 'bg-indigo-50' : 'hover:bg-gray-50'">
-            <span class="text-lg font-semibold text-gray-900">Is a placement test conducted before the course
+            <span data-i18n="faq_q3" class="text-lg font-semibold text-gray-900">Is a placement test conducted before
+              the course
               begins?</span>
             <svg :class="openFaq === 3 ? 'rotate-180 text-indigo-600' : 'text-gray-500'"
               class="w-5 h-5 transform transition-all duration-300 flex-shrink-0" fill="none" viewBox="0 0 24 24"
@@ -701,7 +551,7 @@
             </svg>
           </button>
           <div x-show="openFaq === 3" x-collapse class="px-6 pb-5">
-            <p class="text-gray-600 pt-2">
+            <p data-i18n="faq_a3" class="text-gray-600 pt-2 font-medium">
               Yes, we conduct a placement test for each student before the
               course begins to ensure the content is appropriate for their
               level.
@@ -714,7 +564,8 @@
           <button @click="openFaq = openFaq === 4 ? null : 4"
             class="w-full px-6 py-5 text-left flex justify-between items-center"
             :class="openFaq === 4 ? 'bg-indigo-50' : 'hover:bg-gray-50'">
-            <span class="text-lg font-semibold text-gray-900">What types of workshops do you offer?</span>
+            <span data-i18n="faq_q4" class="text-lg font-semibold text-gray-900">What types of workshops do you
+              offer?</span>
             <svg :class="openFaq === 4 ? 'rotate-180 text-indigo-600' : 'text-gray-500'"
               class="w-5 h-5 transform transition-all duration-300 flex-shrink-0" fill="none" viewBox="0 0 24 24"
               stroke="currentColor">
@@ -722,7 +573,7 @@
             </svg>
           </button>
           <div x-show="openFaq === 4" x-collapse class="px-6 pb-5">
-            <p class="text-gray-600 pt-2">
+            <p data-i18n="faq_a4" class="text-gray-600 pt-2 font-medium">
               We have special workshops that include storytelling, educational
               games, educational songs, and more.
             </p>
@@ -734,7 +585,7 @@
           <button @click="openFaq = openFaq === 5 ? null : 5"
             class="w-full px-6 py-5 text-left flex justify-between items-center"
             :class="openFaq === 5 ? 'bg-indigo-50' : 'hover:bg-gray-50'">
-            <span class="text-lg font-semibold text-gray-900">Do you offer sibling discounts?</span>
+            <span data-i18n="faq_q5" class="text-lg font-semibold text-gray-900">Do you offer sibling discounts?</span>
             <svg :class="openFaq === 5 ? 'rotate-180 text-indigo-600' : 'text-gray-500'"
               class="w-5 h-5 transform transition-all duration-300 flex-shrink-0" fill="none" viewBox="0 0 24 24"
               stroke="currentColor">
@@ -742,7 +593,7 @@
             </svg>
           </button>
           <div x-show="openFaq === 5" x-collapse class="px-6 pb-5">
-            <p class="text-gray-600 pt-2">
+            <p data-i18n="faq_a5" class="text-gray-600 pt-2 font-medium">
               Yes, we offer special discounts if students are from the same
               family.
             </p>
@@ -754,7 +605,8 @@
           <button @click="openFaq = openFaq === 6 ? null : 6"
             class="w-full px-6 py-5 text-left flex justify-between items-center"
             :class="openFaq === 6 ? 'bg-indigo-50' : 'hover:bg-gray-50'">
-            <span class="text-lg font-semibold text-gray-900">Is the content available in Arabic?</span>
+            <span data-i18n="faq_q6" class="text-lg font-semibold text-gray-900">Is the content available in
+              Arabic?</span>
             <svg :class="openFaq === 6 ? 'rotate-180 text-indigo-600' : 'text-gray-500'"
               class="w-5 h-5 transform transition-all duration-300 flex-shrink-0" fill="none" viewBox="0 0 24 24"
               stroke="currentColor">
@@ -762,7 +614,7 @@
             </svg>
           </button>
           <div x-show="openFaq === 6" x-collapse class="px-6 pb-5">
-            <p class="text-gray-600 pt-2">
+            <p data-i18n="faq_a6" class="text-gray-600 pt-2 font-medium">
               Yes, we offer some materials in Arabic to facilitate
               understanding for all students.
             </p>
@@ -774,7 +626,8 @@
           <button @click="openFaq = openFaq === 7 ? null : 7"
             class="w-full px-6 py-5 text-left flex justify-between items-center"
             :class="openFaq === 7 ? 'bg-indigo-50' : 'hover:bg-gray-50'">
-            <span class="text-lg font-semibold text-gray-900">What is the duration of each course?</span>
+            <span data-i18n="faq_q7" class="text-lg font-semibold text-gray-900">What is the duration of each
+              course?</span>
             <svg :class="openFaq === 7 ? 'rotate-180 text-indigo-600' : 'text-gray-500'"
               class="w-5 h-5 transform transition-all duration-300 flex-shrink-0" fill="none" viewBox="0 0 24 24"
               stroke="currentColor">
@@ -782,7 +635,7 @@
             </svg>
           </button>
           <div x-show="openFaq === 7" x-collapse class="px-6 pb-5">
-            <p class="text-gray-600 pt-2">
+            <p data-i18n="faq_a7" class="text-gray-600 pt-2 font-medium">
               Each term consists of 10 or 20 or 30 lessons 50 min. to make sure children are focus and concentrated.
             </p>
           </div>
@@ -793,7 +646,7 @@
           <button @click="openFaq = openFaq === 8 ? null : 8"
             class="w-full px-6 py-5 text-left flex justify-between items-center"
             :class="openFaq === 8 ? 'bg-indigo-50' : 'hover:bg-gray-50'">
-            <span class="text-lg font-semibold text-gray-900">How can I contact you?</span>
+            <span data-i18n="faq_q8" class="text-lg font-semibold text-gray-900">How can I contact you?</span>
             <svg :class="openFaq === 8 ? 'rotate-180 text-indigo-600' : 'text-gray-500'"
               class="w-5 h-5 transform transition-all duration-300 flex-shrink-0" fill="none" viewBox="0 0 24 24"
               stroke="currentColor">
@@ -801,7 +654,7 @@
             </svg>
           </button>
           <div x-show="openFaq === 8" x-collapse class="px-6 pb-5">
-            <p class="text-gray-600 pt-2">
+            <p data-i18n="faq_a8" class="text-gray-600 pt-2 font-medium">
               You can contact us via email, and we will be happy to answer any
               questions.
             </p>
@@ -837,7 +690,8 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-4 gap-8">
         <div>
-          <svg width="200" height="125" viewBox="0 0 4845 1190" version="1.1" xmlns="http://www.w3.org/2000/svg"
+          <a href="index.html">
+                      <svg width="200" height="125" viewBox="0 0 4845 1190" version="1.1" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="
                 fill-rule: evenodd;
                 clip-rule: evenodd;
@@ -1158,35 +1012,36 @@
               </g>
             </g>
           </svg>
-     <p class="text-gray-300">
+          </a>
+          <p data-i18n="footer_desc" class="text-gray-300">
             Arabic speaking children's best choice learning perfect English.
           </p>
         </div>
         <div>
-          <h5 class="text-lg font-semibold mb-4">Quick Links</h5>
+          <h5 data-i18n="footer_quick" class="text-lg font-semibold mb-4">Quick Links</h5>
           <ul class="space-y-2 text-gray-300">
             <li>
-              <span class="mr-2 font-bold text-pink-500 text-xl">→</span><a href="index.html"
+              <span class="mr-2 font-bold text-pink-500 text-xl">→</span><a href="index.html" data-i18n="nav_home"
                 class="hover:text-white">Home</a>
             </li>
 
             <li>
               <span class="mr-2 font-bold text-pink-500 text-xl">→</span>
-              <a href="workshops.html" class="hover:text-white">Workshops</a>
+              <a href="workshops.html" data-i18n="nav_workshops" class="hover:text-white">Workshops</a>
             </li>
             <li>
             <li>
               <span class="mr-2 font-bold text-pink-500 text-xl">→</span>
-              <a href="courses.html" class="hover:text-white">Courses</a>
+              <a href="courses.html" data-i18n="nav_courses" class="hover:text-white">Courses</a>
             </li>
             <span class="mr-2 font-bold text-pink-500 text-xl">→</span>
-            <a href="contact.html" class="hover:text-white">Contact</a>
+            <a href="contact.html" data-i18n="nav_contact" class="hover:text-white">Contact</a>
             </li>
           </ul>
         </div>
 
         <div>
-          <h5 class="text-lg font-semibold mb-4">Contact Info</h5>
+          <h5 data-i18n="footer_contact" class="text-lg font-semibold mb-4">Contact Info</h5>
           <ul class="space-y-2 text-gray-300">
             <li>📧 tap.abc.edu@gmail.com</li>
             <li>📞 (534) 838-7340</li>
@@ -1194,21 +1049,14 @@
         </div>
 
         <div>
-          <h5 class="text-lg font-semibold mb-4">Follow Us</h5>
-     <div class="flex flex- space-x-4">
-              <a
-                href="https://www.facebook.com/profile.php?id=61584407516124"
-                class="text-gray-300 hover:text-white"
-              >
-                <span class="mr-2 font-bold text-pink-500 text-xl">→</span
-                >Facebook</a
-              >
-  
-              <a href="https://www.instagram.com/tap_abc?igsh=aXlzMHQ1c3JseHBj" class="text-gray-300 hover:text-white">
-                <span class="mr-2 font-bold text-pink-500 text-xl">→</span
-                >Instagram</a
-              >
-            </div>
+          <h5 data-i18n="footer_follow" class="text-lg font-semibold mb-4">Follow Us</h5>
+          <div class="flex flex- space-x-4">
+            <a href="https://www.facebook.com/profile.php?id=61584407516124" class="text-gray-300 hover:text-white">
+              <span class="mr-2 font-bold text-pink-500 text-xl">→</span>Facebook</a>
+
+            <a href="https://www.instagram.com/tap_abc?igsh=aXlzMHQ1c3JseHBj" class="text-gray-300 hover:text-white">
+              <span class="mr-2 font-bold text-pink-500 text-xl">→</span>Instagram</a>
+          </div>
         </div>
       </div>
 
